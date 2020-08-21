@@ -11,6 +11,29 @@ using System.Threading.Tasks;
 ■ метод ToString().*/
 namespace C_sharp_DZ_8_3
 {
+    public class Point2D<T>
+    {
+
+        public T X { get; set; }
+        public T Y { get; set; }
+        public Point2D(T x, T y)
+        {
+            X = x;
+            Y = y;
+        }
+        public Point2D()
+        {
+            X = default(T);
+            Y = default(T);
+        }
+        public override string ToString()
+        {
+            return $"X={X}, Y={Y}";
+        }
+    }
+
+
+
 
 
     class Program
