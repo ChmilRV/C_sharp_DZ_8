@@ -41,40 +41,32 @@ namespace C_sharp_DZ_8_1
             {
                 case "1":
                     WriteLine("Введите слово для перевода:");
-                    string key;
-                    if (myDict.TryGetValue(ReadLine(), out key))
+                    string key = ReadLine();
+                    try
                     {
-                        WriteLine(key);
+                        WriteLine(myDict[key]);
                     }
-                    else
+                    catch (KeyNotFoundException e)
                     {
-                        WriteLine("Нет в словаре.");
+                        WriteLine(e.Message);
                     }
                     break;
                 case "2":
                     WriteLine("Введите слово для перевода:");
-                    string _Value = ReadLine();
-                    if (myDict.ContainsValue(_Value))
+                    string value = ReadLine();
+                    if (myDict.ContainsValue(value))
                     {
-                        WriteLine(myDict[_Value]);
+                        foreach (KeyValuePair<string, string> word in myDict)
+                        {
+                            if (word.Value==value) WriteLine($"{word.Key}");
+                        }
                     }
                     else
                     {
-                        WriteLine("Нет в словаре.");
+                        WriteLine("Ключ не существует");
                     }
                     break;
-
-
             }
-
-
-
-
-            
-
-
-
-
 
 
             ReadKey();
