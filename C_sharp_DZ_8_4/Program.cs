@@ -8,28 +8,29 @@ using System.Threading.Tasks;
 Результат записать в коллекцию Dictionary<TKey, TValue>.*/
 namespace C_sharp_DZ_8_4
 {
-
-
     class Program
     {
-
-
         static void Main(string[] args)
         {
             Title = "C_sharp_DZ_8_4";
-            string testText = "Карл у Клары украл кораллы а Клара у Карла украла кларнет. Если бы Карл у Клары не украл кораллы, то Клара у Карла не украла б кларнет";
+            string testText = "Карл у Клары украл кораллы а Клара у Карла украла кларнет Если бы Карл у Клары не украл кораллы то Клара у Карла не украла б кларнет";
             string[] testTextString = testText.Split(' ');
             Dictionary<string, int> myColl = new Dictionary<string, int>();
-            myColl.Add(testTextString[0], 1);
             foreach (string word in testTextString)
             {
-
-                myColl.Add(word, 1);
-
+                if (!myColl.ContainsKey(word))
+                {
+                    myColl[word] = 1;
+                }
+                else
+                {
+                    myColl[word] += 1;
+                }
             }
-
-
-
+            foreach (KeyValuePair<string, int> p in myColl)
+            {
+                WriteLine($"{p.Key} - {p.Value}");
+            }
             ReadKey();
         }
     }
