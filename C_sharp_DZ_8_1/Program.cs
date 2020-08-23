@@ -10,6 +10,7 @@ namespace C_sharp_DZ_8_1
     {
         static void Main(string[] args)
         {
+            Title = "C_sharp_DZ_8_1";
             Dictionary<string, string> myDict = new Dictionary<string, string>()
             {
                 ["Австралия"] = "Australia",

@@ -13,7 +13,6 @@ namespace C_sharp_DZ_8_2
 {
     public class Point2D<T>
     {
-        
         public T X { get; set; }
         public T Y { get; set; }
         public Point2D(T x, T y)
@@ -50,6 +49,7 @@ namespace C_sharp_DZ_8_2
     {
         static void Main(string[] args)
         {
+            Title = "C_sharp_DZ_8_2";
             Point2D<int> point1 = new Point2D<int>();
             Point2D<int> point2 = new Point2D<int>(1,2);
             Point3D point3 = new Point3D(1, 2, 3);
